@@ -71,7 +71,7 @@ public class Calculator implements ActionListener {
             numberButtons[i].setFocusable(false);
         }
 
-        negButton.setBounds(50,430,100,50);
+        negButton.setBounds(50, 430, 100, 50);
         delButton.setBounds(150, 430, 100, 50);
         clrButton.setBounds(250, 430, 100, 50);
 
@@ -131,8 +131,8 @@ public class Calculator implements ActionListener {
         if (e.getSource() == addButton) {
             num1 = Double.parseDouble(textField.getText());
             // assign operator in single quotes
-           operator = '+';
-           textField.setText("");
+            operator = '+';
+            textField.setText("");
         }
         if (e.getSource() == subButton) {
             num1 = Double.parseDouble(textField.getText());
@@ -156,17 +156,17 @@ public class Calculator implements ActionListener {
             num2 = Double.parseDouble(textField.getText());
 
             // using switch to determine what mathematical operation to perform'
-            switch (operator){
-                case'+':
+            switch (operator) {
+                case '+':
                     result = num1 + num2;
                     break;
-                case'-':
+                case '-':
                     result = num1 - num2;
                     break;
-                case'*':
+                case '*':
                     result = num1 * num2;
                     break;
-                case'/':
+                case '/':
                     result = num1 / num2;
                     break;
             }
@@ -182,13 +182,38 @@ public class Calculator implements ActionListener {
             String string = textField.getText();
             textField.setText("");
             // iterates through the length of the String - 1
-            for (int i = 0; i < string.length()-1; i++) {
-                textField.setText(textField.getText()+string.charAt(i));
+            for (int i = 0; i < string.length() - 1; i++) {
+                textField.setText(textField.getText() + string.charAt(i));
             }
         }
+        if (e.getSource() == negButton) {
+            double num = Double.parseDouble(textField.getText());
+            if (num >= 0) {
+                double resultNeg = num * -1;
+                textField.setText(resultNeg + " ");
+            } else {
+                double resultPos = num * -1;
+                textField.setText(resultPos + " ");
+
+            }
+        /*
+        if (e.getSource() == negButton) {
+
+            // retrieve text from text field
+            double temp = Double.parseDouble(textField.getText());
+            // flip the sign on our temp variable
+            temp *= -1;
+
+            // set text to current value of temp
+            textField.setText(String.valueOf(temp));
+        }
+
+         */
+
+        /*
         try {
             if (e.getSource() == negButton) {
-                    double num = Double.parseDouble(textField.getText());
+                double num = Double.parseDouble(textField.getText());
                     if (num >= 0){
                         double resultNeg = num * -1;
                         textField.setText(resultNeg + "");
@@ -203,16 +228,10 @@ public class Calculator implements ActionListener {
             System.out.println("NumberFormatException occurred");
 
         }
-        /*
-        // retrieve text from text field
-        double temp = Double.parseDouble(textField.getText());
-        // flip the sign on our temp variable
-        temp *= -1;
-
-        // set text to current value of temp
-        textField.setText(String.valueOf(temp));
 
          */
 
+
+        }
     }
 }
