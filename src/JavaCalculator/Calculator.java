@@ -82,6 +82,7 @@ public class Calculator implements ActionListener {
 
         // background color changed to see the dimensions of the panel and with its functions that will be added
         //panel.setBackground(Color.BLACK);
+
         panel.add(numberButtons[1]);
         panel.add(numberButtons[2]);
         panel.add(numberButtons[3]);
