@@ -187,7 +187,61 @@ public class Calculator implements ActionListener {
             }
         }
         if (e.getSource() == negButton) {
-            double num = Double.parseDouble(textField.getText());
+
+            // retrieve text from text field
+            double temp = Double.parseDouble(textField.getText());
+            // flip the sign on our temp variable
+            temp *= -1;
+
+            // set text to current value of temp
+            textField.setText(String.valueOf(temp));
+        }
+
+    }
+}
+
+
+/*
+        try {
+            if (e.getSource() == negButton) {
+                double num1 = Double.parseDouble(textField.getText());
+                double result = num1 * -1;
+                textField.setText(Double.toString(result));
+            }
+        } catch (NumberFormatException ex) {
+            System.out.println("NumberFormatException occurred");
+            textField.setText("Invalid input");
+        }
+
+
+
+        /*
+        if (e.getSource() == negButton) {
+            try {
+                // Retrieve text from the text field and parse it as a double
+                double temp = Double.parseDouble(textField.getText());
+
+                // Flip the sign of the temp variable
+                temp *= -1;
+
+                // Set the text field to the new value of temp
+                textField.setText(String.valueOf(temp));
+            } catch (NumberFormatException ex) {
+                // Handle cases where the input is not a valid number
+                textField.setText("Invalid input");
+                System.out.println("NumberFormatException occurred: " + ex.getMessage());
+            }
+        }
+
+         */
+
+        /*
+
+        if (e.getSource() == negButton) {
+            String string = textField.getText();
+            double num;
+
+            num = Double.parseDouble(textField.getText());
             if (num >= 0) {
                 double resultNeg = num * -1;
                 textField.setText(resultNeg + " ");
@@ -196,6 +250,11 @@ public class Calculator implements ActionListener {
                 textField.setText(resultPos + " ");
 
             }
+        }
+
+         */
+
+
         /*
         if (e.getSource() == negButton) {
 
@@ -210,28 +269,23 @@ public class Calculator implements ActionListener {
 
          */
 
-        /*
+/*
         try {
             if (e.getSource() == negButton) {
-                double num = Double.parseDouble(textField.getText());
-                    if (num >= 0){
-                        double resultNeg = num * -1;
-                        textField.setText(resultNeg + "");
-                    }
-                    else {
-                        double resultPos = num * -1;
-                        textField.setText(resultPos + "");
-                    }
-                }
+                double num1 = Double.parseDouble(textField.getText());
+                double result = num1 * -1;
+                textField.setText(Double.toString(result));
             }
-        catch (NumberFormatException num){
+        } catch (NumberFormatException ex) {
             System.out.println("NumberFormatException occurred");
-
+            textField.setText("Invalid input");
         }
 
-         */
+ */
 
 
-        }
-    }
-}
+
+
+
+
+
